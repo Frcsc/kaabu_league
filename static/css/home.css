@@ -1,0 +1,47 @@
+.ptable table {
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+th {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.headin {
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    margin: 30px;
+    display: block;
+}
+
+.wpos,
+.pos {
+    text-align: center;
+}
+
+.wpos td {
+    color: #000000;
+}
+
+.pos td {
+    color: #ff7b21;
+}
+
+table .col {
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.wpos:hover td {
+    color: #000000;
+}
+
+.pos:hover td {
+    color: #000000;
+}
