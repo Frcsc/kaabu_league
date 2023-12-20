@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+<div style="max-width: 1200px; margin: 0 auto;" class="mt-5">
+    <h2>Delete Game</h2>
+
+    <p>Are you sure you want to delete the game "{{ game.game_title }}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="tiger-button">Confirm Delete</button>
+    </form>
+
+    <a href="{% url 'games' %}">Cancel</a>
+</div>
+{% endblock content%}

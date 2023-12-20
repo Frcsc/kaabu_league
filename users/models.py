@@ -40,10 +40,9 @@ class User(AbstractBaseUser):
 
 class UserProfile(BaseModel):
     class USERTYPE(TextChoices):
-        BASIC_USERS = 'basic_users'
         ADMIN_USESRS = 'admin_users'
 
     user = models.OneToOneField('User', on_delete=models.CASCADE)
     type_of_user = models.CharField(
-        max_length=128, choices=USERTYPE.choices, default=USERTYPE.BASIC_USERS
+        max_length=128, choices=USERTYPE.choices, default=USERTYPE.ADMIN_USESRS
     )

@@ -19,4 +19,6 @@ from django.urls import include, path
 urlpatterns = [
     path('tigerlab-admin-dashboard/', admin.site.urls),
     path('', include('rankings.urls')),
+    path('games/', include('games.urls')),
+    path('users/', include('users.urls')),
 ]

@@ -15,3 +15,7 @@ class Game(BaseModel):
 
     def __str__(self):
         return f"{self.team_1.name} {self.team_1_score} - {self.team_2_score} {self.team_2.name}"
+
+    @property
+    def game_title(self):
+        return f"{self.team_1.name} {self.team_1_score} - {self.team_2_score} {self.team_2.name}"
