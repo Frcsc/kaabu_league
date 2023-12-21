@@ -1,0 +1,22 @@
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: end;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+.topnav .login-container {
+  float: right;
+}

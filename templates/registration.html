@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_register.css' %}">
+{% endblock %}
+{% block content %}
+{% include 'partials/navbar.html' %}
+{% include 'partials/message.html' %}
+  <div class="login-form">
+    <div class="login" id="login">
+        <form method="POST" action="{% url 'registration' %}">
+            {% csrf_token %}
+            <input type="email" placeholder=" email" id="new_email" name="new_email" required>
+            <input type="password" id="new_password" name="new_password" placeholder=" password"required>
+            <button type="submit" class="sign-in-button">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

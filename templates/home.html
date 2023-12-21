@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+<div style="max-width: 1200px; margin: 0 auto;">
+    <div class="ptable">
+        <h1 class="headin">Standings</h1>
+        <table>
+            <tr class="col">
+                <th>Ranking</th>
+                <th>Team</th>
+                <th>Points</th>
+            </tr>
+            {% for team in teams %}
+            <tr class="wpos">
+                <td>{{ forloop.counter }}</td>
+                <td>{{team.name}}</td>
+                <td>{{team.total_points}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,25 @@
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-button {
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    background-color: #000000;
+    margin: 15px;
+}
+form {
+    display: table-caption;
+    margin-top: 50px;
+}
+
+form input {
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+    padding: 0px 15px 0px 10px;
+}

@@ -1,0 +1,28 @@
+# NOTE: This docker-compose.yml file is meant for development use, not for production
+
+version: '3'
+
+services:
+  db:
+    container_name: database
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ${DB_HOST:-tigerlab}
+      POSTGRES_USER: ${DB_USER:-tigerlab}
+      POSTGRES_PASSWORD: ${DB_PASS:-tigerlab}
+
+  django:
+    container_name: tigerlab
+    build: .
+    volumes:
+      - .:/tigerlab
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: "db"
+      DB_PASS: ${DB_PASS:-tigerlab}
+      DJANGO_SETTINGS_MODULE: tiger_lab_league.settings
+    stdin_open: true
+    tty: true

@@ -1,0 +1,13 @@
+<div class="topnav">
+    {% if user.is_authenticated %}
+        <a href="{% url 'games' %}" class="tiger-button">Game Management</a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="tiger-button">Sign Out</button>
+        </form>
+    {% else %}
+        <a href="{% url 'registration' %}" class="tiger-button">Registration</a>
+        <a href="{% url 'login' %}" class="tiger-button">Login</a>
+    {% endif %}
+    <a class="tiger-button" href="{% url 'homepage' %}">ranking</a>
+</div>

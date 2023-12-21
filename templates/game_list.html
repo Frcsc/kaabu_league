@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/game_management.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+
+<div style="max-width: 1200px; margin: 0 auto;">
+    <h2>Game list</h2>
+    <a href="{% url 'add_game' %}" class="add-btn">Add a new game</a>
+    <a href="{% url 'upload' %}" class="add-btn">Upload CSV</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Home Team</th>
+                <th>Home Team Score</th>
+                <th>Away Team</th>
+                <th>Away Team Score</th>
+                <th>Game Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in games %}
+                <tr>
+                    <td>{{ game.team_1 }}</td>
+                    <td>{{ game.team_1_score }}</td>
+                    <td>{{ game.team_2 }}</td>
+                    <td>{{ game.team_2_score }}</td>
+                    <td>
+                        <a href="{% url 'edit_game' game.id %}" class="edit-btn">Edit</a>
+                        <a href="{% url 'delete_game' game.id %}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

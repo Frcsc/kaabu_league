@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/game_management.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Add New Game</h2>
+{% include 'partials/message.html' %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="tiger-button" type="submit">Save</button>
+</form>
+
+<a href="{% url 'games' %}">Back to Game List</a>
+{% endblock content%}
