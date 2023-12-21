@@ -1,6 +1,6 @@
 # NOTE: This Dockerfile is meant for development use, not for production
 
-FROM python:3.10
+FROM python:3.10-slim
 
 WORKDIR /tigerlab
 
