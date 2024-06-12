@@ -1,7 +1,3 @@
-# Tigerlab Assesment
-
-This is a test project intended for tigerlab and it was built using a macOS device.
-
 ## Quick User Guide Before Running This Project
 
 Make sure you are in the root directory of the project, the one with `Pipfile` in it.
